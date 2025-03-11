@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+    --ieee-blue: #00629B;
+    --ieee-orange: #ff6a39;
+}
+
+@theme inline {
+  --color-background: var(--ieee-blue);
+  --color-foreground: var(--ieee-blue);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a2c;
+    /* --foreground: #ededed; */
+  }
+} 
+
+body {
+  background: var(--ieee-blue);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    @apply text-4xl font-bold mb-4;
+}
+
+h1 {
+    @apply text-4xl font-bold mb-4;
+}
+
+h2 {
+    @apply text-2xl font-semibold mb-3;
+}
+
+/* Custom utilities */
+@layer utilities {
+    .text-ieee-blue{
+        color: var(--ieee-blue);
+    }
+
+    .bg-ieee-blue{
+        background-color: var(--ieee-blue);
+    }
+
+    .hover\:bg-ieee-blue:hover{
+        background-color: var(--ieee-blue);
+    }
+
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3 ;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+/* Modal Animation */
+@keyframes scale-in{
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.animate-scale-in {
+    animation: scale-in 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Social Icons Hover */
+.hover\:text-ieee-blue-dark:hover{
+    color: #004a7a;
+}
